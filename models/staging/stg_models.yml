@@ -6,7 +6,7 @@ models:
       description: "A model for raw campaign data"
       columns:
           - name: campkey
-            description: "Customer identifier"
+            description: "Campaign identifier"
             tests:
                 - not_null
           - name: cust_id
