@@ -1,0 +1,19 @@
+version: 2
+
+
+models:
+  - name: campaigns
+    description: "Total number of orders by campaign"
+    columns:
+      - name: campkey
+        description: primary key of model
+        tests:
+          - unique
+          - not_null
+      - name: total_qty
+        description: "Total number of orders"
+        tests:
+          - not_null
+
+  - name: country
+    description: "Total number of orders by country"
