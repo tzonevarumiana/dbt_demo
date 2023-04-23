@@ -1,0 +1,9 @@
+# Fivetran specific config file
+jobs:
+ - name: every10minutes
+   schedule: '*/10 * * * *' # The example will run every 20 minutes.    
+   steps:
+     - name: run models
+       command: dbt run # This command will run all models.
+     - name: test models
+       command: dbt test # This command will run all tests.

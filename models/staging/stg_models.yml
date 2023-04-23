@@ -1,0 +1,52 @@
+version: 2
+
+
+models:
+    - name: stg_campaigns
+      description: "A model for raw campaign data"
+      columns:
+          - name: campkey
+            description: "Customer identifier"
+            tests:
+                - not_null
+          - name: cust_id
+            description: "Customer identifier"
+            tests:
+                - not_null
+          - name: camp_name
+            description: "Campaign name"
+            tests:
+                - not_null
+          - name: new_col
+            description: "Test variable"
+            tests:
+                - not_null
+          - name: order_qty
+            description: "Number of orders by campaign"
+            tests:
+                - not_null
+
+
+    - name: stg_customers
+      description: "A model for raw customers data"
+      columns:
+          - name: cust_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+          - name: name
+            description: "Customer name column"
+            tests:
+                - not_null
+          - name: country
+            description: "Residence country of customer"
+            tests:
+                - not_null
+                - accepted_values:
+                    values:
+                      - "Norway"
+                      - "United Kingdom"
+                      - "Spain"
+                      - "Bulgaria"
+                      - "Germany"
